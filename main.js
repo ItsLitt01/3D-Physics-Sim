@@ -101,6 +101,12 @@ addEventListener('pointermove', e => {
 });
 addEventListener('keydown', e => {
   if (e.code === 'Space') pouring = true;
+  if (e.key === '0') {
+    grid.fill(EMPTY);
+    life.fill(0);
+    draw();
+    return;
+  }
   const picked = byKey[e.key];
   if (picked) {
     material = picked.id;
